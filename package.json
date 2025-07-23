@@ -1,0 +1,19 @@
+{
+  "name": "hugo-private-post",
+  "version": "1.0.0",
+  "description": "A Hugo plugin for private posts",
+  "main": "index.js",
+  "bin": {
+    "hugo-secure": "./bin/hugo.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Özgür Vurgun",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
