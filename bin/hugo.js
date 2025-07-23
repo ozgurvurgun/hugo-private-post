@@ -9,8 +9,6 @@ const CONTENT_DIR = path.join(ROOT_DIR, "content");
 async function main() {
   const encryptor = new Encryptor(CONTENT_DIR);
   await encryptor.processAll();
-
-  execSync("hugo", { stdio: "inherit" });
 }
 
 main();
