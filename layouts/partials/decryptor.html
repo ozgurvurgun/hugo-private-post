@@ -1,0 +1,27 @@
+{{ if .Content | findRE "id=\"key\"" }}
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+<script>
+  const keyInput = document.getElementById("key");
+  const contentEl = document.getElementById("content");
+
+  if (keyInput && contentEl) {
+    const encryptedText = contentEl.textContent.trim();
+
+    keyInput.addEventListener("input", () => {
+      const password = keyInput.value.trim();
+      if (!password) {
+        contentEl.textContent = encryptedText;
+        return;
+      }
+      try {
+        const bytes = CryptoJS.AES.decrypt(encryptedText, password);
+        const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+        if (decrypted) contentEl.textContent = decrypted;
+        else throw new Error("Invalid");
+      } catch {
+        contentEl.textContent = encryptedText;
+      }
+    });
+  }
+</script>
+{{ end }}
