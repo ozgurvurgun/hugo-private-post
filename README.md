@@ -1,7 +1,7 @@
 # hugo-private-post
 
 AES-based encryption support for Hugo posts.
-Write your Markdown content as usual—just add `encrypt: true` and `key: ...` to the frontmatter, and this tool will handle the rest.
+Write your Markdown content as usual just add `encrypt: true` and `key: ...` to the frontmatter, and this tool will handle the rest.
 
 ## Features
 
